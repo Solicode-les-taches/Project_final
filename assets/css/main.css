@@ -1,0 +1,32 @@
+:root {
+    --bg_color: #ffffff;
+    --color_primary: #2563eb;
+    --color_gold: #f59e0b;
+    --color_dark: #1e293b;
+    --color_gray: #64748b;
+    --color_light: #f1f5f9;
+    --color_border: #e2e8f0;
+    --font_main: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    
+    font-family: var(--font_main);
+    background-color: var(--bg_color);
+    color: var(--color_dark);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
