@@ -68,11 +68,11 @@
 
         <div class="places_grid">
         
-        <a href="#" class="place_card">
+        <a href="pages/post.php" class="place_card">
                 <img src="assets/img/home.jpg" class="place_card_img" alt="plage achakare">
                 <div class="place_card_overlay">
                     <span class="place_card_category">
-                        <i class="fa-solid fa-location-dot"></i> Beache
+                        <i class="fa-solid fa-location-dot"></i> Beach
                     </span>
                     <h3 class="place_card_name">Plage Achakare</h3>
                     <p class="place_card_views">
@@ -81,7 +81,7 @@
                     <span class="place_card_btn">Explore <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </a>
-        <a href="#" class="place_card">
+        <a href="pages/post.php" class="place_card">
                 <img src="assets/img/home.jpg" class="place_card_img" alt="plage achakare">
                 <div class="place_card_overlay">
                     <span class="place_card_category">
