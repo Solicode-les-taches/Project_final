@@ -10,6 +10,7 @@
     --color_light: #f1f5f9;
     --color_border: #e2e8f0;
     --font_main: 'Inter', sans-serif;
+    --detail_shadow: 0 10px 40px rgba(0,0,0,0.1);
 }
 
 * {
