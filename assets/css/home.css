@@ -135,6 +135,26 @@
 }
 
 
+
+.swipe_hint {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--color_gray, #6b7280);
+    margin-bottom: 16px;
+}
+.swipe_hint i {
+    color: var(--color_primary);
+    animation: swipe_anim 1.5s infinite ease-in-out;
+}
+@keyframes swipe_anim {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(5px); }
+}
+
+
 .places_grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -147,7 +167,7 @@
     overflow: hidden;
     display: block;
     aspect-ratio: 2 / 3;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     cursor: pointer;
     background: #000;
 }
@@ -244,9 +264,51 @@
 }
 
 
+.section_footer {
+    text-align: center;
+    margin-top: 32px;
+}
+
+.view_all_link {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color_primary);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.2s, color 0.2s;
+}
+
+.view_all_link:hover {
+    gap: 10px;
+    color: #1d4ed8;
+}
+
+
 @media (max-width: 1024px) {
+
+    .swipe_hint {
+        display: flex;
+    }
     .places_grid {
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 15px;
+        
+        scrollbar-width: none; 
+        background-color: #ffffff !important; 
+        -webkit-overflow-scrolling: touch; 
+    }
+
+     .places_grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .place_card {
+        flex: 0 0 calc(50% - 7.5px); 
+        scroll-snap-align: start;
+        aspect-ratio: 4 / 5;
     }
 
     .place_card_overlay {
@@ -272,11 +334,14 @@
 
 @media (max-width: 600px) {
     .places_grid {
-        grid-template-columns: 1fr;
+        gap: 10px;
+        background-color: #ffffff !important; 
+        -webkit-overflow-scrolling: touch;
     }
 
     .place_card {
-        aspect-ratio: 16 / 9;
+        flex: 0 0 100%;
+        aspect-ratio: 5 / 5;
     }
 
     .place_card_name {
@@ -290,25 +355,7 @@
 
 
 
-.section_footer {
-    text-align: center;
-    margin-top: 32px;
-}
 
-.view_all_link {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--color_primary);
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    transition: gap 0.2s, color 0.2s;
-}
-
-.view_all_link:hover {
-    gap: 10px;
-    color: #1d4ed8;
-}
 
 @media (max-width: 768px) {
     .hero_section {
