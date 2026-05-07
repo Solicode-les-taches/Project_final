@@ -15,7 +15,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
 
             <!-- logo desktop -->
-            <a href="index.php" class="logo">
+            <a href="../index.php" class="logo">
                 <div class="logo_icon">
                     <i class="fa-solid fa-compass"></i>
                 </div>
@@ -94,10 +94,10 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
     <div class="mobile_nav_overlay" id="mobileNav">
         <div class="mobile_nav_content">
-            <div class="mobile_nav_header">
+            <a href="../index.php" class="mobile_nav_header">
                 <span class="logo_text">Tangier <span class="highlight">Vibes</span></span>
                 <button id="closeMenu"><i class="fa-solid fa-xmark"></i></button>
-            </div>
+            </a >
             <ul class="mobile_menu_links">
                 <li><a href="../index.php" class="nav_link <?php echo ($current_page == 'index.php') ? 'active' : ''; ?>"><i class="fa-solid fa-house "></i> Home</a></li>
                 <li><a href="#" class="nav_link <?php echo ($current_page == 'top_places.php') ? 'active' : ''; ?>"><i class="fa-solid fa-star"></i> Top Places</a></li>
