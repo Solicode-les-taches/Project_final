@@ -232,6 +232,8 @@ if (!$post) {
             <a href="#" class="share_item wa"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
 
+        
+
         <div class="action_bar_container">
             <button class="mobile_save_btn">
                 <i class="fa-regular fa-heart"></i> <span>Save to Favorites</span>
