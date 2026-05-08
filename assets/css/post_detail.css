@@ -179,12 +179,14 @@
     margin-bottom: 20px;
     color: var(--color_dark);
 }
+
 .detail_info_section h3 {
     font-size: 18px;
     font-weight: 400;
     margin-bottom: 20px;
     color: var(--color_dark);
 }
+
 
 .detail_description {
     font-size: 17px;
