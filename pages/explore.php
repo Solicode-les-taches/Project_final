@@ -1,4 +1,6 @@
 <?php
+
+session_start();
 require_once '../config/db_connection.php';
 require_once '../includes/Post.php';
 
@@ -60,7 +62,7 @@ if ($category_id) {
     <main>
         <!-- Explore Hero -->
         <section class="explore_hero">
-            <img src="../assets/img/explore.jpg" alt="Tangier Panorama" class="explore_hero_img">
+            <img src="../assets/img/explore.jpg" alt="Tangier Panorama" class="explore_hero_img" loading="lazy">
             <div class="explore_hero_content">
                 <h1 class="explore_hero_title">Explore Tangier</h1>
                 <p class="explore_hero_desc">Discover the magic of the Pearl of the North, from historic landmarks to hidden beaches.</p>
@@ -94,7 +96,7 @@ if ($category_id) {
                 <div class="places_grid" id="posts-grid">
                     <?php foreach($posts as $post): ?>
                         <a href="post_detail.php?id=<?= $post['id']; ?>" class="place_card">
-                            <img src="<?= htmlspecialchars($post['image']); ?>" class="place_card_img" alt="<?= htmlspecialchars($post['title']); ?>">
+                            <img src="<?= htmlspecialchars($post['image']); ?>" class="place_card_img" alt="<?= htmlspecialchars($post['title']); ?>" loading="lazy">
                             <div class="place_card_overlay">
                                 <span class="place_card_category">
                                     <i class="fa-solid fa-location-dot"></i> <?= htmlspecialchars($post['cat_name']); ?>
