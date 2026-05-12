@@ -13,20 +13,14 @@ $category_id = isset($_GET['cat']) ? $_GET['cat'] : null;
 
 
 
-$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-if ($page < 1) $page = 1;
 
-$limit = 6;
-
-$offset = ($page - 1) * $limit;
 
 
 $categories = $postObj->getCategories();
-$posts = $postObj->filterPosts($category_id, $search, $limit, $offset);
 
 
-$total_posts = $postObj->countPosts($category_id, $search);
-$total_pages = ceil($total_posts / $limit);
+
+$posts = $postObj->filterPosts($category_id, $search);
 
 
 
@@ -77,20 +71,19 @@ if ($category_id) {
         <section class="filters_container">
             <div class="category_filters">
                 <a href="explore.php" class="cat_filter_btn <?= !$category_id ? 'active' : '' ?>">
-                    <i class="fa-solid fa-border-all"></i> All
+                     All
                 </a>
                 <?php foreach($categories as $cat): ?>
                     <a href="explore.php?cat=<?= $cat['id'] ?><?= $search ? '&search='.urlencode($search) : '' ?>" 
                        class="cat_filter_btn <?= $category_id == $cat['id'] ? 'active' : '' ?>">
-                        <i class="fa-solid fa-<?= getCategoryIcon($cat['name']) ?>"></i> <?= htmlspecialchars($cat['name']) ?>
+                       <?= htmlspecialchars($cat['name']) ?>
                     </a>
                 <?php endforeach; ?>
             </div>
 
             <?php if ($search): ?>
-                <div class="search_status">
-                    Showing results for: <strong>"<?= htmlspecialchars($search) ?>"</strong> 
-                    in <strong><?= htmlspecialchars($current_category_name) ?></strong>
+                 <div class="search_status">
+                    Search: <strong>"<?= htmlspecialchars($search) ?>"</strong>
                 </div>
             <?php endif; ?>
         </section>
@@ -117,23 +110,15 @@ if ($category_id) {
                 </div>
 
                <div class="pagination_container">
-                    <?php if ($page > 1): ?>
-                        <a href="?page=<?= $page - 1 ?>&cat=<?= $category_id ?>&search=<?= urlencode($search) ?>" class="pagination_btn prev">
-                            <i class="fas fa-arrow-left"></i> Previous
-                        </a>
-                    <?php endif; ?>
 
-                    <?php if ($total_pages > 0): ?>
-                        <span class="page_info">
-                            <?= $page ?> / <?= $total_pages ?>
-                        </span>
-                    <?php endif; ?>
+                    <div class="pagination_btn next">
+                           <i class="fas fa-arrow-left"></i> previous 
+                        </div>
+                    <span class="page_info">1 / 3</span>
 
-                    <?php if ($page < $total_pages): ?>
-                        <a href="?page=<?= $page + 1 ?>&cat=<?= $category_id ?>&search=<?= urlencode($search) ?>" class="pagination_btn next">
-                            Next <i class="fas fa-arrow-right"></i>
-                        </a>
-                    <?php endif; ?>
+                    <div class="pagination_btn next">
+                        Next <i class="fas fa-arrow-right"></i>
+                    </div>
                 </div>
 
             <?php else: ?>
@@ -154,17 +139,4 @@ if ($category_id) {
 </body>
 </html>
 
-<?php
-function getCategoryIcon($cat_name) {
-    $icons = [
-        'Hotels' => 'fa-hotel',
-        'Restaurants' => 'fa-utensils',
-        'Cafes' => 'fa-mug-hot',
-        'Beaches' => 'fa-umbrella-beach',
-        'Parks' => 'fa-tree',
-        'Museums' => 'fa-museum',
-        'Historical Sites' => 'fa-monument'
-    ];
-    return $icons[$cat_name] ?? 'fa-location-dot';
-}
-?>
+
