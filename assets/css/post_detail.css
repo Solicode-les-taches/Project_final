@@ -16,32 +16,11 @@
     justify-content: flex-start; 
     color: white;
     text-align: left;
+    
 }
 
 
-.detail_hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to top, 
-        rgba(0, 0, 0, 0.9) 0%, 
-        rgba(0, 0, 0, 0.4) 50%,
-        transparent 100%
-    );
-}
 
-.detail_hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to top, 
-        rgba(0, 0, 0, 0.9) 0%, 
-        rgba(0, 0, 0, 0.4) 50%,
-        transparent 100%
-    );
-}
 
 
 .detail_header_content {
@@ -355,12 +334,12 @@
 
 .detail_sidebar_card {
     background: white;
-    padding: 35px 30px;
+    padding: 10px 30px;
     border-radius: 28px;
     box-shadow: var(--detail_shadow);
     height: fit-content;
     position: sticky;
-    top: 100px;
+    top: 80px;
 }
 
 .sidebar_title_premium {
