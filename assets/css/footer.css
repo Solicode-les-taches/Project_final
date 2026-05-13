@@ -117,29 +117,41 @@
         gap: 20px;
     }
 }
-
 @media (max-width: 480px) {
     .footer_top {
-        grid-template-columns: 1fr;
-        gap: 24px;
-        padding: 0 16px 32px;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px 10px;
+        padding: 0 20px 32px;
     }
 
-    .site_footer {
-        padding-top: 32px;
-    }
-    .footer_desc {
-        max-width: 100%;
-            text-align: center;
-
-    }
-
-    .footer_col {
+    .footer_about {
+        grid-column: 1 / span 2;
         text-align: center;
+    }
+
+    .footer_col:nth-child(2),
+    .footer_col:nth-child(3) {
+        grid-column: span 1;
+        text-align: left;
+        padding-left: 15px;
+    }
+
+    .footer_col:last-child {
+        grid-column: 1 / span 2;
+        text-align: center;
+    }
+
+    .footer_socials {
+        justify-content: center;
     }
 
     .footer_logo {
         display: flex;
         justify-content: center;
+    }
+
+    .footer_desc {
+        max-width: 100%;
+        margin: 0 auto;
     }
 }
