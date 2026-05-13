@@ -56,12 +56,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Register - Tangier Vibes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/main.css">
-    <link rel="stylesheet" href="../assets/css/header.css">
     <link rel="stylesheet" href="../assets/css/footer.css">
     <link rel="stylesheet" href="../assets/css/register_login.css">
 </head>
 <body>
-    <?php require '../includes/header.php'; ?>
+    <header class="site_header">
+
+
+
+    <nav class="header_nav">
+
+
+            <a href="../index.php" class="logo">
+                <div class="logo_icon">
+                    <i class="fa-solid fa-compass"></i>
+                </div>
+
+                <span class="logo_text">Tangier <span class="highlight">Vibes</span></span>
+            </a>
+    </nav>
+            
+</header>
 
     <div class="auth_container">
         <div class="auth_card">
@@ -98,7 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </form>
 
             <div class="auth_footer">
-                <p>Already have an account? <a href="login.php">Login</a></p>
+                <p>Already have an account? <a href="login.php" class="auth_link">Login</a></p>
             </div>
         </div>
     </div>
