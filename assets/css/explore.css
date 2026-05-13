@@ -201,6 +201,34 @@
 
 
 
+@media (max-width: 1024px) {
+    .places_grid {
+        display: grid !important; /* Force grid over flex */
+        grid-template-columns: repeat(2, 1fr) !important; /* 2 cards for tablet */
+        gap: 20px !important;
+        overflow-x: visible !important; /* Remove horizontal scroll */
+        padding: 0 !important;
+    }
+    
+    .place_card {
+        flex: none !important; /* Remove flex sizing */
+        width: 100% !important;
+        aspect-ratio: 4 / 5 !important; /* Adjust height slightly */
+    }
+}
+@media (max-width: 600px) {
+    .places_grid {
+        grid-template-columns: 1fr !important; /* 1 card for mobile */
+        gap: 15px !important;
+    }
+    
+    .place_card {
+        aspect-ratio: 1 / 1 !important; /* Make cards square on mobile */
+    }
+}
+
+
+
 
 
 
