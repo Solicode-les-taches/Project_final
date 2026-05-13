@@ -53,7 +53,7 @@ if ($category_id) {
     <link rel="stylesheet" href="../assets/css/header.css">
     <link rel="stylesheet" href="../assets/css/footer.css">
     <link rel="stylesheet" href="../assets/css/home.css">
-    <link rel="stylesheet" href="../assets/css/explore.css?v=1.3">
+    <link rel="stylesheet" href="../assets/css/explore.css">
 </head>
 <body>
 
